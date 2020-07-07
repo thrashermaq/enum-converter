@@ -1,3 +1,4 @@
-## [0.0.1] - TODO: Add release date.
+## [0.0.1] - 07.07.2020
 
-* TODO: Describe initial release.
+* Simple converter function for enums.
+* Example: input: Test.VAL1 output: 'VAL1'
