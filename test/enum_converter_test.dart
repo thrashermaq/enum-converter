@@ -1,13 +1,28 @@
+import 'package:enum_converter/enum_converter.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:enum_converter/enum_converter.dart';
-
 void main() {
-  test('adds one to input values', () {
-    final calculator = Calculator();
-    expect(calculator.addOne(2), 3);
-    expect(calculator.addOne(-7), -6);
-    expect(calculator.addOne(0), 1);
-    expect(() => calculator.addOne(null), throwsNoSuchMethodError);
+  test('valid enum input', () {
+    final converter = EnumConverter();
+    expect(converter.convert(Test.VAL1), 'VAL1');
+    expect(converter.convert(Test.VAL2), 'VAL2');
   });
+
+  test('non enum input', () {
+    final converter = EnumConverter();
+    expect(converter.convert(null), 'null');
+    expect(converter.convert(1), '1');
+    var x = X('test');
+    expect(converter.convert(x), x.toString());
+  });
+}
+
+enum Test {
+  VAL1,
+  VAL2,
+}
+
+class X {
+  final String val;
+  X(this.val);
 }
