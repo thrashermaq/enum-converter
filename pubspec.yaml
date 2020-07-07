@@ -1,6 +1,7 @@
 name: enum_converter
-description: IP5 demo package
-version: 0.0.1
+description: IP5 demo package. Simple converter of dart enum values to strings. Example - input Test.VAL1 output 'VAL1'
+version: 1.0.0
+homepage: https://github.com/thrashermaq/enum-converter
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

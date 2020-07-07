@@ -3,17 +3,15 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   test('valid enum input', () {
-    final converter = EnumConverter();
-    expect(converter.convert(Test.VAL1), 'VAL1');
-    expect(converter.convert(Test.VAL2), 'VAL2');
+    expect(EnumConverter.convert(Test.VAL1), 'VAL1');
+    expect(EnumConverter.convert(Test.VAL2), 'VAL2');
   });
 
   test('non enum input', () {
-    final converter = EnumConverter();
-    expect(converter.convert(null), 'null');
-    expect(converter.convert(1), '1');
+    expect(EnumConverter.convert(null), 'null');
+    expect(EnumConverter.convert(1), '1');
     var x = X('test');
-    expect(converter.convert(x), x.toString());
+    expect(EnumConverter.convert(x), x.toString());
   });
 }
 
